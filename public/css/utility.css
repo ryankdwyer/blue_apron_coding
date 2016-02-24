@@ -1,0 +1,37 @@
+/*
+    Helper Classes
+*/
+
+.hide {
+    display: none;
+}
+
+.correct-answer {
+    display: inline;
+    position: absolute;
+    left: 18px;
+    bottom: 0;
+    z-index: 5;
+}
+
+.check-or-x {
+    display: inline;
+    position: absolute;
+    left: 4.75em;
+    z-index: 4;
+    height: 230px;
+}
+
+.dotted {
+    border: 1px dotted lightgray;
+    margin: .7em;
+    border-radius: 5px;
+}
+
+.translucent {
+    opacity: 0.4;
+}
+
+.outline {
+    outline: 3px #2f3665 solid;
+}

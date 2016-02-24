@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif ;
+}
+.main {
+    display: flex;
+    flex: 1;
+}
+
+.content {
+    flex: 1;
+    justify-content: center;
+}
+
+.sidebar {
+    flex: 0 0 12em;
+}
+
+.left {
+    order: -1;
+}
+
+/*
+    Buttons
+*/
+
+.btn {
+    margin-left: .5em;
+    font-size: smaller;
+    font-weight: lighter;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #2f3665;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #202546;
+    text-decoration: none;
+}

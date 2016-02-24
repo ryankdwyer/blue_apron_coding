@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blue Apron Matching Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/recipeBoxes.css">
+    <link rel="stylesheet" href="css/recipeImages.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-main">
+        <div class="header-left">
+            <img src="img/ba_logo.png" height="70px">
+        </div>
+        <div class="header-center">
+            <h2><i class="fa fa-clock-o"></i> Time Remaining: <span id="timer">2:00</span>
+                <span class="btn" id="startGame" onclick="_blue_apron.gameLogic.startGame(this)">Start!</span>
+                <span class="btn hide" id="resetGame" onclick="_blue_apron.gameLogic.resetGame(this)">Reset</span>
+            </h2>
+
+        </div>
+        <div class="header-right">
+            <h2>Points: <span id="points">0</span></h2>
+        </div>
+        <div class="header-sidebar left"></div>
+        <div class="header-sidebar"></div>
+    </div>
+    <!-- Header end -->
+        <hr>
+    <!-- Content -->
+    <div class="main">
+        <div class="content">
+            <!-- Image area -->
+            <div id="recipe-photos"></div>
+            <!-- Image area end -->
+
+            <!-- Recipe Card Area -->
+            <div class="recipe">
+                <div class="recipe-container">
+                    <div class="recipe-header">
+                        <h3>Recipe Card</h3>
+                    </div>
+                    <div id="recipe-names"></div>
+                </div>
+            </div>
+            <!-- Recipe Card Area End -->
+
+        </div>
+        <!-- Spacers -->
+        <div class="sidebar left"></div>
+        <div class="sidebar"></div>
+    </div>
+    <!-- Modal -->
+    <div id="modal">
+        <div>
+            <i onclick="_blue_apron.modal.closeModal()" class="fa fa-times"></i>
+            <p id="modal-content"></p>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="js/dataParser.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/dragNdrop.js"></script>
+    <script src="js/gameLogic.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>

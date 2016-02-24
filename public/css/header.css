@@ -1,0 +1,22 @@
+#header-main {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.header-left {
+    margin: 0;
+}
+
+.header-center {
+    margin: 0;
+}
+
+.header-right {
+    margin: 0;
+}
+
+.header-sidebar {
+    flex: 0 0 6.5em;
+}

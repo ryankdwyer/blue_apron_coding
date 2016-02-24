@@ -1,0 +1,17 @@
+/*
+    Image Styling
+*/
+
+#recipe-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#recipe-photos > div {
+    position: relative;
+}
+
+#recipe-photos img {
+    margin: 1em;
+}
