@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp && babel-node --presets es2015 server"
+    "start": "babel-node --presets es2015 server"
   },
   "author": "",
   "license": "ISC",
