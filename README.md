@@ -6,4 +6,4 @@
 3. ```npm start```
 
 
-Check it out live: http://www.blue-apron-challenge.herokuapp.com
+Check it out live: https://www.blue-apron-challenge.herokuapp.com
