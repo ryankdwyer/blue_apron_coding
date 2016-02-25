@@ -1,7 +1,7 @@
 'use strict';
 
 (function ($, blue_apron, window, document) {
-  blue_apron.data_parser = blue_apron.data_parser || function () {
+  blue_apron.data_parser = blue_apron.data_parser || (function () {
     return {
       buildImage: function buildImage(src, title) {
         var $div = $(document.createElement('div'));
@@ -66,5 +66,7 @@
         return $element;
       }
     };
-  }();
+  })();
 })(jQuery, window._blue_apron = window._blue_apron || {}, window, document);
+
+//# sourceMappingURL=dataParser-compiled.js.map

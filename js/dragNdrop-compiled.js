@@ -1,7 +1,6 @@
 'use strict';
-
 (function ($, blue_apron, window, document) {
-  blue_apron.dragNdrop = blue_apron.dragNdrop || function () {
+  blue_apron.dragNdrop = blue_apron.dragNdrop || (function () {
     return {
       dragElement: undefined,
       onDragEnd: function onDragEnd(e) {
@@ -38,5 +37,7 @@
         return drop === target;
       }
     };
-  }();
+  })();
 })(jQuery, window._blue_apron = window._blue_apron || {}, window, document);
+
+//# sourceMappingURL=dragNdrop-compiled.js.map

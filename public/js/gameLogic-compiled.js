@@ -1,7 +1,7 @@
 'use strict';
 
 (function ($, blue_apron, window, document) {
-  blue_apron.gameLogic = blue_apron.gameLogic || function () {
+  blue_apron.gameLogic = blue_apron.gameLogic || (function () {
     return {
       interval: undefined,
       points: undefined,
@@ -130,5 +130,7 @@
         });
       }
     };
-  }();
+  })();
 })(jQuery, window._blue_apron = window._blue_apron || {}, window, document);
+
+//# sourceMappingURL=gameLogic-compiled.js.map
