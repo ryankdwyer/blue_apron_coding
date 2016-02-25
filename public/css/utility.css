@@ -17,9 +17,10 @@
 .check-or-x {
     display: inline;
     position: absolute;
-    left: 4.75em;
+    left: 9em;
+    top: 4em;
     z-index: 4;
-    height: 230px;
+    height: 100px;
 }
 
 .dotted {
