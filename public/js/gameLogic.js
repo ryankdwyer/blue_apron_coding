@@ -106,6 +106,7 @@
           $points.text(Number($points.text()) + num);
         },
         gameOver() {
+          clearInterval(blue_apron.gameLogic.interval);
           blue_apron.modal.showModal('You scored: ' + blue_apron.gameLogic.points.text() + ' points.');
         },
         getGameState() {

@@ -36,3 +36,7 @@
 .outline {
     outline: 3px #2f3665 solid;
 }
+
+[onclick] {
+    cursor: pointer;
+}
