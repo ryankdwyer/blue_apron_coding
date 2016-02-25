@@ -8,8 +8,8 @@
         startButton: undefined,
         resetButton: undefined,
         recipesLeft: undefined,
-        onMatch(event, right) {
-          let $img = $(event.target.parentNode);
+        onMatch(event, correct) {
+          let $imgParentDiv = $(event.target.parentNode);
           let $dragElement = $(blue_apron.dragNdrop.dragElement);
           let $dottedDiv = $dragElement.parent();
 
@@ -17,22 +17,21 @@
           $dottedDiv.width($dragElement.width());
           $dottedDiv.css('padding', '.86em');
 
-          $dragElement.addClass('correct-answer');
+          $dragElement.addClass('answer');
           $dragElement.attr('draggable', false);
 
-          $img.append($dragElement);
-          $img.append(blue_apron.data_parser.buildCheckOrX(right));
+          $imgParentDiv.append($dragElement);
+          $imgParentDiv.append(blue_apron.data_parser.buildCheckOrX(correct));
 
           blue_apron.gameLogic.recipesLeft = blue_apron.gameLogic.recipesLeft - 1;
           blue_apron.dragNdrop.dragElement = undefined;
 
-          if(right) {
+          if(correct) {
             blue_apron.gameLogic.updatePoints(10);
-            //put a green CHECK mark
           } else {
             blue_apron.gameLogic.updatePoints(-5);
-            //put a red X
           }
+
           if(blue_apron.gameLogic.getGameState() <=0) {
             blue_apron.gameLogic.gameOver();
           }
@@ -42,8 +41,14 @@
           let $resetButton = blue_apron.gameLogic.resetButton || $('#resetGame');
           let $timer = blue_apron.gameLogic.timer || $('#timer');
           let $points = blue_apron.gameLogic.points || $('#points');
+          let $recipeNames = $('#recipe-names');
+
+          blue_apron.data.recipes.forEach(function(recipe) {
+            $recipeNames.append(blue_apron.data_parser.buildRecipe(recipe.recipe.title, recipe.recipe.sub_title), recipe.product_id);
+          });
+
           let recipeBoxes = $('.recipe-box');
-          let recipeCount = blue_apron.gameLogic.recipesLeft || recipeBoxes.length;
+          let recipeCount = recipeBoxes.length;
 
           blue_apron.data_parser.makeDraggable(recipeBoxes);
           blue_apron.gameLogic.saveDomElements($points, $timer, $startButton, $resetButton, recipeCount);
@@ -66,7 +71,6 @@
           $startGame.removeClass('hide');
 
           blue_apron.gameLogic.clearGameBoard();
-          blue_apron.gameLogic.buildGameBoard();
         },
         tick (end) {
           let timeToGo = end - Date.now();
@@ -109,7 +113,7 @@
         },
         clearGameBoard() {
           let checkAndX = $('.check-or-x');
-          let photoDiv = $('div.recipe-box.correct-answer');
+          let photoDiv = $('div.recipe-box.answer');
           $('#recipe-names').empty();
           for (let i = 0; i < photoDiv.length; i++) {
             $(photoDiv[i]).remove();
@@ -119,7 +123,6 @@
           }
         },
         buildGameBoard() {
-          let $recipePhotos = $('#recipe-photos');
           let $recipeNames = $('#recipe-names');
           blue_apron.data.recipes.forEach(function(recipe) {
             $recipeNames.append(blue_apron.data_parser.buildRecipe(recipe.recipe.title, recipe.recipe.sub_title), recipe.product_id);

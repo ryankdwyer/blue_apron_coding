@@ -21,11 +21,13 @@
         onDrop(e) {
           e.preventDefault();
           e.stopPropagation();
+
           let target = $(this);
           let dataFromDrop = blue_apron.dragNdrop.parseDataTransfer(e);
           let dataFromTarget = target.data().title;
 
           target.removeClass('outline');
+
           blue_apron.gameLogic.onMatch(e, blue_apron.dragNdrop.match(dataFromDrop, dataFromTarget));
         },
         parseDataTransfer(event) {

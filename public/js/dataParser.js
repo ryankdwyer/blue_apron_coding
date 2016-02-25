@@ -5,16 +5,19 @@
         buildImage(src, title) {
           let $div = $(document.createElement('div'));
           let $img = $(document.createElement('img'));
+
           $img.data('title', title);
           $img.attr(`src`, `http:${src}`);
           $img = blue_apron.data_parser.makeDroppable($img);
 
           $div.append($img);
+
           return $div;
         },
         buildRecipe(title, subtitle, product_id){
           let $dottedLineDiv = $(document.createElement('div'));
           $dottedLineDiv.addClass('dotted');
+
           let $div = $(document.createElement('div'));
           $div.addClass('recipe-box');
           $div.attr('id', product_id);
@@ -32,10 +35,12 @@
           $div.append($titleDiv);
           $div.append($sub_titleDiv);
           $dottedLineDiv.append($div);
+
           return $dottedLineDiv;
         },
         buildCheckOrX(right) {
           let $img = $(document.createElement('img'));
+
           $img.addClass('check-or-x');
           if (right) {
             $img.attr('src', 'img/check.png');
@@ -50,7 +55,6 @@
             currElement.attr('draggable', true);
             currElement.on('dragstart', blue_apron.dragNdrop.onDragStart);
             currElement.on('dragend', blue_apron.dragNdrop.onDragEnd);
-            //return $element;
           }
         },
         makeDroppable($element) {

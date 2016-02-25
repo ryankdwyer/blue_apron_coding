@@ -6,7 +6,7 @@
     display: none;
 }
 
-.correct-answer {
+.answer {
     display: inline;
     position: absolute;
     left: 18px;
